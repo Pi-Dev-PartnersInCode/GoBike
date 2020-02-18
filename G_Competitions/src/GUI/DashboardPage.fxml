@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1300.0" snapToPixel="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DashboardPageController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="920.0" prefWidth="1372.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="644.0" minWidth="10.0" prefWidth="253.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1153.0" minWidth="10.0" prefWidth="1119.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="455.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="902.0" minHeight="10.0" prefHeight="803.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="800.0" prefWidth="240.0" style="-fx-background-color: #343434;" GridPane.rowIndex="1">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#homeClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Home " textAlignment="CENTER" textFill="#e6b31e">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="120.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#competitionsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Competitions" textAlignment="CENTER" textFill="#e6b31e">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#participationsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Participations" textAlignment="CENTER" textFill="#e6b31e">
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#partnersClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Partners" textAlignment="CENTER" textFill="#e6b31e">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#partnershipsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Partnerships" textAlignment="CENTER" textFill="#e6b31e">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1122.0" style="-fx-background-color: #343434;" GridPane.columnIndex="1" />
+            <VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="164.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <children>
+                  <ImageView fitHeight="117.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/LogoPi.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="Container" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1060.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
