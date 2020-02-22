@@ -11,23 +11,36 @@ package entities;
  */
 public class Participant {
     
+    int idParticipation;
     private int rank;
     private String nom;
     private String prenom;
     private int record;
 
-    public Participant(int rank, String nom, String prenom, int record) {
+    public Participant(int idParticipation, int rank, String nom, String prenom, int record) {
+        this.idParticipation = idParticipation;
         this.rank = rank;
         this.nom = nom;
         this.prenom = prenom;
         this.record = record;
     }
 
+
+
     public Participant() {
+        this.idParticipation =0;
         this.rank = 0;
         this.nom = " ";
         this.prenom = " ";
         this.record = 0;
+    }
+
+    public int getIdParticipation() {
+        return idParticipation;
+    }
+
+    public void setIdParticipation(int idParticipation) {
+        this.idParticipation = idParticipation;
     }
 
     public int getRank() {
@@ -64,9 +77,10 @@ public class Participant {
 
     @Override
     public String toString() {
-        return "Participant{" + "rank=" + rank + ", nom=" + nom + ", prenom=" + prenom + ", record=" + record + "}\n";
+        return "Participant{" + "idParticipation=" + idParticipation + ", rank=" + rank + ", nom=" + nom + ", prenom=" + prenom + ", record=" + record + '}';
     }
-    
+
+
 
     
     

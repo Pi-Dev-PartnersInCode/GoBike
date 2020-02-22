@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,28 +27,31 @@
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="1003.0" minWidth="10.0" prefWidth="870.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="392.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="757.0" minHeight="10.0" prefHeight="658.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="392.0" minHeight="10.0" prefHeight="156.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="757.0" minHeight="10.0" prefHeight="644.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView fx:id="tableCompetitions" onMouseClicked="#CompetitonSelected" prefHeight="618.0" prefWidth="1008.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TableView fx:id="tableCompetitions" onMouseClicked="#CompetitonSelected" prefHeight="533.0" prefWidth="830.0" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-background-radius: 12px; -fx-border-radius: 12px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="idComp_col" prefWidth="63.0" text="ID" />
-                <TableColumn fx:id="nomComp_col" prefWidth="201.0" text="Nom Competition" />
-                  <TableColumn fx:id="emplacement_col" minWidth="0.0" prefWidth="134.0" text="Emplacement" />
-                  <TableColumn fx:id="dateComp_col" minWidth="0.0" prefWidth="151.0" text="Date Competition" />
+                <TableColumn fx:id="nomComp_col" prefWidth="201.0" text="Compition Name" />
+                  <TableColumn fx:id="emplacement_col" minWidth="0.0" prefWidth="134.0" text="Location" />
+                  <TableColumn fx:id="dateComp_col" minWidth="0.0" prefWidth="151.0" text="Date" />
                   <TableColumn fx:id="description_col" prefWidth="280.0" text="Description" />
               </columns>
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
             </TableView>
             <AnchorPane prefHeight="142.0" prefWidth="1115.0" GridPane.columnIndex="1">
                <children>
                   <HBox layoutX="41.0" layoutY="14.0" prefHeight="39.0" prefWidth="352.0">
                      <children>
-                        <Label prefHeight="21.0" prefWidth="162.0" text="Identfiant Competiton" />
-                        <TextField fx:id="idComp_input" editable="false" text="0">
+                        <Label prefHeight="21.0" prefWidth="162.0" text="Cometition ID" />
+                        <TextField fx:id="idComp_input" editable="false" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="0">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -56,8 +60,8 @@
                   </HBox>
                   <HBox layoutX="41.0" layoutY="52.0" prefHeight="39.0" prefWidth="352.0">
                      <children>
-                        <Label prefHeight="21.0" prefWidth="162.0" text="Nom Competiton" />
-                        <TextField fx:id="nomComp_input" promptText="Nom du Competition">
+                        <Label prefHeight="21.0" prefWidth="162.0" text="Competiton Name" />
+                        <TextField fx:id="nomComp_input" promptText="Competition Name" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -66,8 +70,8 @@
                   </HBox>
                   <HBox layoutX="41.0" layoutY="91.0" prefHeight="39.0" prefWidth="352.0">
                      <children>
-                        <Label prefHeight="21.0" prefWidth="162.0" text="Emplacement" />
-                        <TextField fx:id="emplacement_input" promptText="emplacement">
+                        <Label prefHeight="21.0" prefWidth="162.0" text="Location" />
+                        <TextField fx:id="emplacement_input" promptText="Location" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -76,19 +80,22 @@
                   </HBox>
                   <HBox layoutX="415.0" layoutY="52.0" prefHeight="69.0" prefWidth="352.0">
                      <children>
-                        <Label prefHeight="21.0" prefWidth="162.0" text="Description" />
-                        <TextArea fx:id="description_input" prefHeight="69.0" prefWidth="216.0" promptText="Description de la competition" />
+                        <Label prefHeight="21.0" prefWidth="162.0" text="A brief Description" />
+                        <TextArea fx:id="description_input" prefHeight="69.0" prefWidth="216.0" promptText="A brief description" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
                      </children>
                   </HBox>
                   <HBox layoutX="415.0" layoutY="14.0" prefHeight="39.0" prefWidth="352.0">
                      <children>
-                        <Label prefHeight="21.0" prefWidth="162.0" text="Date Competiton" />
-                        <DatePicker fx:id="dateComp_input" prefHeight="25.0" prefWidth="214.0" />
+                        <Label prefHeight="21.0" prefWidth="162.0" text="Date" />
+                        <DatePicker fx:id="dateComp_input" prefHeight="25.0" prefWidth="214.0" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
                      </children>
                   </HBox>
+                  <Button layoutX="20.0" layoutY="143.0" mnemonicParsing="false" onAction="#printTopdf" style="-fx-background-color: #cacaca; -fx-font-color: #343434;" text="Export Participants List" />
+                  <TextField fx:id="searchBar" layoutX="645.0" layoutY="131.0" prefHeight="31.0" prefWidth="202.0" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
+                  <Label layoutX="523.0" layoutY="136.0" text="Search By Name" />
                </children>
             </AnchorPane>
-            <Label prefHeight="124.0" prefWidth="190.0" text="Gestion &#10;Competitions">
+            <Label prefHeight="124.0" prefWidth="190.0" text="Competitions&#10;Management">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -100,7 +107,7 @@
                <children>
                   <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addClicked" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
-                        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                        <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
                      </VBox.margin>
                      <graphic>
                         <ImageView fitHeight="76.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
@@ -112,7 +119,7 @@
                   </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editClicked" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
-                        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                        <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
                      </VBox.margin>
                      <graphic>
                         <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
@@ -124,7 +131,7 @@
                   </Button>
                   <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteClicked" prefHeight="60.0" prefWidth="60.0">
                      <VBox.margin>
-                        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                        <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
                      </VBox.margin>
                      <graphic>
                         <ImageView fitHeight="76.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
@@ -133,6 +140,18 @@
                            </image>
                         </ImageView>
                      </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewParticipants" prefHeight="60.0" prefWidth="60.0">
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/participants.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
+                     </VBox.margin>
                   </Button>
                </children>
             </VBox>

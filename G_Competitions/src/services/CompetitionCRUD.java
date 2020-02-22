@@ -5,12 +5,24 @@
  */
 package services;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import entities.Competition;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -96,6 +108,141 @@ public class CompetitionCRUD {
         
         return psr;             
     }
+     public ArrayList<Competition> rechercher(String nom ){
+        ArrayList<Competition> psr = new ArrayList<>();
+        try {
+            String req = "SELECT * FROM competition where nomComp like '?'";
+            PreparedStatement pst2 = cnx.prepareStatement(req);
+            pst2.setString(1,"%"+nom+"%");
+            ResultSet rs = pst2.executeQuery();
+            while (rs.next())
+            {
+                Competition c = new Competition();
+                
+                c.setIdCompetition(rs.getInt("idCompetition"));
+                c.setNom(rs.getString("nomComp"));
+                c.setEmplacement(rs.getString("emplacement"));
+                c.setDescription(rs.getString("description"));
+                c.setDateComp(rs.getDate("dateComp"));
+               
+                psr.add(c);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ex.getMessage());
+        }
+        
+        
+        return psr;             
+    }
+
+    public void FacturePdf(int id) throws SQLException,FileNotFoundException,DocumentException,IOException 
+    {
+        Document doc = new Document();
+        
+       
+        st= cnx.createStatement();
+        ResultSet rs=st.executeQuery("select participation.*,user.* from participation INNER JOIN user ON participation.idUser=User.idUser where participation.idComp='"+id+"'ORDER BY rang");
+        PdfWriter.getInstance(doc, new FileOutputStream("e:/pdf/Resultat.pdf"));
+        
+        doc.open();
+        doc.add(new Paragraph("   "));
+        doc.add(new Paragraph("  Resultat de la Competition  "));
+        doc.add(new Paragraph("   "));
+        
+        PdfPTable table = new PdfPTable(4);
+        table.setWidthPercentage(100);
+        PdfPCell cell;
+        
+        cell = new PdfPCell(new Phrase("nom_membre",FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+        
+        cell = new PdfPCell(new Phrase("prenom_membre",FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+        
+        cell = new PdfPCell(new Phrase("record",FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+        
+        
+        cell = new PdfPCell(new Phrase("ranking",FontFactory.getFont("Comic Sans MS",12)));
+        cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+     while (rs.next()) {                
+            
+               String nom_membre=rs.getString("firstName");
+               String prenom_membre=rs.getString("lastName");
+               int record=rs.getInt("record");
+                  int ranking=rs.getInt("rang");
+               
+            
+               
+                 
+               
+               //Conversion to String
+              /*
+               String nom  = nom.toString();
+               String prenom  = prenom.toString();
+*/
+                String rank = Integer.toString(ranking);
+                String rec = Integer.toString(record);
+         
+               
+               
+               
+               
+               cell = new PdfPCell(new Phrase(nom_membre,FontFactory.getFont("Comic Sans MS",12)));
+               cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+               cell.setBackgroundColor(BaseColor.GRAY);
+               table.addCell(cell);
+               
+               cell = new PdfPCell(new Phrase(prenom_membre,FontFactory.getFont("Comic Sans MS",12)));
+               cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+               cell.setBackgroundColor(BaseColor.GRAY);
+               table.addCell(cell);
+               
+               cell = new PdfPCell(new Phrase(rec,FontFactory.getFont("Comic Sans MS",12)));
+               cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+               cell.setBackgroundColor(BaseColor.GRAY);
+               table.addCell(cell);
+        
+        
+               cell = new PdfPCell(new Phrase(rank,FontFactory.getFont("Comic Sans MS",12)));
+               cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+               cell.setBackgroundColor(BaseColor.GRAY);
+               table.addCell(cell);
+        
+        
+   
+        
+        
+               
+              
+        
+                        }
+            doc.add(table);
+            doc.close();
+            Desktop.getDesktop().open(new File ("e:/pdf/Resultat.pdf"));
+            }
+     
+     
+     
+     
 }
 
 

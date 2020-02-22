@@ -53,16 +53,13 @@ public class ParticipationCRUD {
     }
     public void modifierParticipation(Participation p){
         try {
-            //String requete2 ="INSERT INTO PERSONNE (NOM,PRENOM) VALUES (?,?)";
-            PreparedStatement pst = cnx.prepareStatement("update Participation set idUser = ?, idComp = ?, rang = ?,record = ? where idParticipation = ?");
+            PreparedStatement pst = cnx.prepareStatement("update Participation set  rang = ?,record = ? where idParticipation = ?");
             
+           
+            pst.setInt(1, p.getRang());
+            pst.setInt(2, p.getRecord());
             
-            pst.setInt(1, p.getMyUser().getIdUser());
-            pst.setInt(2, p.getMyCompetition().getIdCompetition());
-            pst.setInt(3, p.getRang());
-            pst.setInt(4, p.getRecord());
-            
-            pst.setInt(5, p.getIdParticipation());
+            pst.setInt(3, p.getIdParticipation());
             
             pst.executeUpdate();
             System.out.println("Participation updated");
@@ -150,6 +147,58 @@ public class ParticipationCRUD {
                 
 
                         
+                psr.add(p);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ex.getMessage());
+        }       
+        return psr;             
+    }
+      public ArrayList<Participant> afficherParticipationParCompetition(int idCompetition){
+        ArrayList<Participant> psr = new ArrayList<>();
+        try {
+            String req = "SELECT u.FirstName, u.LastName ,p.idParticipation,p.rang,p.record FROM Participation p inner join user u on p.idUser = u.idUser where p.idComp = " 
+                    + idCompetition;
+            PreparedStatement pst2 = cnx.prepareStatement(req);
+            ResultSet rs = pst2.executeQuery();
+            while (rs.next())
+            {
+                Participant p = new Participant();
+         
+                p.setNom(rs.getString("firstname"));
+                p.setPrenom(rs.getString("lastName"));
+                p.setRank(rs.getInt("rang"));
+                p.setIdParticipation(rs.getInt("idParticipation"));
+                p.setRecord(rs.getInt("record"));
+
+               
+                
+                psr.add(p);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ex.getMessage());
+        }       
+        return psr;             
+    }
+      public ArrayList<Participant> afficherParticipants(){
+        ArrayList<Participant> psr = new ArrayList<>();
+        try {
+            String req = "SELECT u.FirstName, u.LastName ,p.idParticipation,p.rang,p.record FROM Participation p inner join user u on p.idUser = u.idUser " ;
+
+            PreparedStatement pst2 = cnx.prepareStatement(req);
+            ResultSet rs = pst2.executeQuery();
+            while (rs.next())
+            {
+                Participant p = new Participant();
+         
+                p.setNom(rs.getString("firstname"));
+                p.setPrenom(rs.getString("lastName"));
+                p.setRank(rs.getInt("rang"));
+                p.setIdParticipation(rs.getInt("idParticipation"));
+                p.setRecord(rs.getInt("record"));
+
+               
+                
                 psr.add(p);
             }
         } catch (SQLException ex) {

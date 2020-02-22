@@ -13,15 +13,15 @@ public class TrayIconDemo {
         SystemTray tray = SystemTray.getSystemTray();
 
         //If the icon is a file
-        Image image = Toolkit.getDefaultToolkit().createImage("E:/Esprit/3eme/pi-Dev-GoBike/src/utils/LogoPi.png");
+        Image image = Toolkit.getDefaultToolkit().createImage("/images/LogoPi.png");
         //Alternative (if the icon is on the classpath):
         //Image image = Toolkit.getDefaultToolkit().createImage(getClass().getResource("icon.png"));
 
-        TrayIcon trayIcon = new TrayIcon(image, "Tray Demo");
+        TrayIcon trayIcon = new TrayIcon(image, "GoBike");
         //Let the system resize the image if needed
         trayIcon.setImageAutoSize(true);
         //Set tooltip text for the tray icon
-        trayIcon.setToolTip("System tray icon demo");
+        trayIcon.setToolTip("GoBike");
         tray.add(trayIcon);
 
         trayIcon.displayMessage("GoBike", "participation registered", MessageType.INFO);

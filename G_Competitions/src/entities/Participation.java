@@ -11,8 +11,8 @@ package entities;
  */
 public class Participation {
     private int idParticipation;
-    private User myUser;
-    private Competition myCompetition;
+    private User myUser = new User();
+    private Competition myCompetition = new Competition();
     private int rang;
     private int record;
 

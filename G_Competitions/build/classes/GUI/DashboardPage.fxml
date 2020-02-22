@@ -34,7 +34,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#competitionsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Competitions" textAlignment="CENTER" textFill="#e6b31e">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#CompetitionClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Competitions" textAlignment="CENTER" textFill="#e6b31e">
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
@@ -42,29 +42,13 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#participationsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Participations" textAlignment="CENTER" textFill="#e6b31e">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#participationClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Participations" textAlignment="CENTER" textFill="#e6b31e">
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
-                  </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#partnersClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Partners" textAlignment="CENTER" textFill="#e6b31e">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="20.0" top="20.0" />
-                     </VBox.margin>
-                  </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#partnershipsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Partnerships" textAlignment="CENTER" textFill="#e6b31e">
-                     <font>
-                        <Font name="System Bold" size="24.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets bottom="20.0" top="20.0" />
-                     </VBox.margin>
                   </Label>
                </children>
             </VBox>
