@@ -29,6 +29,7 @@ public class MainnClass extends Application {
             Scene scene = new Scene(root);
             primaryStage.setTitle("GoBike Login");
             primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
             primaryStage.show();
         } catch (IOException ex) {
             Logger.getLogger(MainnClass.class.getName()).log(Level.SEVERE, null, ex);

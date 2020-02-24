@@ -15,7 +15,7 @@ and open the template in the editor.
 .split-pane:vertical > .split-pane-divider{
     -fx-background-color: transparent;
 }
-.button {
+.CRUDbutton {
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 0;
@@ -27,7 +27,23 @@ and open the template in the editor.
 .textField {
 
 }
-.Mylabel:hover{
+.menuButton:hover{
     -fx-background-color: #cacaca;
    
+}
+
+.ColoredBorderWithRadius{
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 3px;
+    -fx-border-color: #e6b31e;
+}
+
+.ColoredButton{
+    -fx-background-color: #e6b31e;
+    -fx-background-radius: 15px;
+}
+
+.nodes:hover{
+    -fx-background-color : #cacaca;
 }

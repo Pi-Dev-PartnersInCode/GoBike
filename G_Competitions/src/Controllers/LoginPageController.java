@@ -59,7 +59,7 @@ public class LoginPageController implements Initializable {
             }   
         }else {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompetitionsPageF.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/CompetitionsPageFront.fxml"));
                 Parent root = loader.load();
                 rootPane.getChildren().setAll(root);
                 
