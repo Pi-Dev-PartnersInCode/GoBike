@@ -26,7 +26,7 @@
          <children>
             <VBox prefHeight="800.0" prefWidth="240.0" style="-fx-background-color: #343434;" GridPane.rowIndex="1">
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#homeClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Home " textAlignment="CENTER" textFill="#e6b31e">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#homeClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Home " textAlignment="CENTER" textFill="#e6b31e">
                      <VBox.margin>
                         <Insets bottom="20.0" top="120.0" />
                      </VBox.margin>
@@ -34,7 +34,7 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#CompetitionClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Competitions" textAlignment="CENTER" textFill="#e6b31e">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#CompetitionClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Competitions" textAlignment="CENTER" textFill="#e6b31e">
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
@@ -42,10 +42,35 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#participationClicked" prefHeight="60.0" prefWidth="252.0" styleClass="Mylabel" stylesheets="@../Styles/Style.css" text="Participations" textAlignment="CENTER" textFill="#e6b31e">
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#participationClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Participations" textAlignment="CENTER" textFill="#e6b31e">
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#usersClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Users " textAlignment="CENTER" textFill="#e6b31e">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#ReservationsClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Reservations" textAlignment="CENTER" textFill="#e6b31e">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#ProductClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Products" textAlignment="CENTER" textFill="#e6b31e">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#WorkshopsCilcked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Workshops" textAlignment="CENTER" textFill="#e6b31e">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" onMouseClicked="#TrainerClicked" prefHeight="60.0" prefWidth="252.0" styleClass="menuButton" stylesheets="@../Styles/Style.css" text="Trainers" textAlignment="CENTER" textFill="#e6b31e">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>

@@ -71,7 +71,8 @@
                   <HBox layoutX="41.0" layoutY="91.0" prefHeight="39.0" prefWidth="352.0">
                      <children>
                         <Label prefHeight="21.0" prefWidth="162.0" text="Location" />
-                        <TextField fx:id="emplacement_input" promptText="Location" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;">
+                        <Button mnemonicParsing="false" onAction="#openMapView" text="L" />
+                        <TextField fx:id="emplacement_input" prefHeight="35.0" prefWidth="223.0" promptText="Location" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;">
                            <HBox.margin>
                               <Insets left="20.0" />
                            </HBox.margin>
@@ -90,7 +91,7 @@
                         <DatePicker fx:id="dateComp_input" prefHeight="25.0" prefWidth="214.0" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
                      </children>
                   </HBox>
-                  <Button layoutX="20.0" layoutY="143.0" mnemonicParsing="false" onAction="#printTopdf" style="-fx-background-color: #cacaca; -fx-font-color: #343434;" text="Export Participants List" />
+                  <Button layoutX="34.0" layoutY="135.0" mnemonicParsing="false" onAction="#printTopdf" styleClass="ColoredButton" text="Export Participants List" />
                   <TextField fx:id="searchBar" layoutX="645.0" layoutY="131.0" prefHeight="31.0" prefWidth="202.0" style="-fx-border-color: #e6b31e; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
                   <Label layoutX="523.0" layoutY="136.0" text="Search By Name" />
                </children>
@@ -105,7 +106,7 @@
             </Label>
             <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                <children>
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addClicked" prefHeight="60.0" prefWidth="60.0">
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addClicked" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
                      <VBox.margin>
                         <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
                      </VBox.margin>
@@ -117,7 +118,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editClicked" prefHeight="60.0" prefWidth="60.0">
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editClicked" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
                      <VBox.margin>
                         <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
                      </VBox.margin>
@@ -129,7 +130,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteClicked" prefHeight="60.0" prefWidth="60.0">
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteClicked" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
                      <VBox.margin>
                         <Insets bottom="50.0" left="60.0" right="50.0" top="50.0" />
                      </VBox.margin>
@@ -141,7 +142,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewParticipants" prefHeight="60.0" prefWidth="60.0">
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewParticipants" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
                      <graphic>
                         <ImageView fitHeight="76.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                            <image>

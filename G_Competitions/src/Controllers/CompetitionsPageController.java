@@ -20,10 +20,13 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -32,6 +35,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 import services.CompetitionCRUD;
@@ -165,15 +173,15 @@ public class CompetitionsPageController implements Initializable {
     @FXML
     private void deleteClicked(ActionEvent event) {
         Competition c = tableCompetitions.getSelectionModel().getSelectedItem();
-        if (c == null){
+        if (c == null) {
             JOptionPane.showMessageDialog(null, "Please select a competition !");
-        }else {
-        int i = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this Competition ?", "delete Competition", YES_NO_OPTION);
-        CompetitionCRUD cc = new CompetitionCRUD();
-        if (i == 0) {
-            cc.supprimerCompetition(c.getIdCompetition());
-            refreshTable(cc.afficherCompetition());
-        }
+        } else {
+            int i = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this Competition ?", "delete Competition", YES_NO_OPTION);
+            CompetitionCRUD cc = new CompetitionCRUD();
+            if (i == 0) {
+                cc.supprimerCompetition(c.getIdCompetition());
+                refreshTable(cc.afficherCompetition());
+            }
         }
 
     }
@@ -220,6 +228,35 @@ public class CompetitionsPageController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(CompetitionsPageController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void openMapView(ActionEvent event) {
+        Stage mapwindow = new Stage();
+        mapwindow.initModality(Modality.APPLICATION_MODAL);
+        mapwindow.setTitle("mapView");
+        Button setLocation = new Button("select Location");
+        WebView myWebView = new WebView();
+        WebEngine engine = myWebView.getEngine();
+        engine.load("https://www.google.tn/maps/");
+        VBox layout = new VBox(10);
+        layout.getChildren().setAll(myWebView,setLocation);
+        Scene scene = new Scene(layout);
+        mapwindow.setScene(scene);
+        mapwindow.showAndWait();
+        
+   
+        setLocation.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                System.out.println("aaaaa");
+                String codejs = "document.getElementById(\"searchboxinput\").value";
+                System.out.println(engine.executeScript(codejs));
+                System.out.println(engine.getLocation());
+                mapwindow.close();
+            }
+        });
+
     }
 
 }

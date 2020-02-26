@@ -8,6 +8,7 @@ package Controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,7 @@ public class DashboardPageController implements Initializable {
  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
       
     }    
 
@@ -63,6 +65,68 @@ public class DashboardPageController implements Initializable {
 
     @FXML
     private void homeClicked(MouseEvent event) {
+    }
+
+    @FXML
+    private void usersClicked(MouseEvent event) {
+              try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/admininterface.fxml"));
+            Parent root = loader.load();
+            Container.getChildren().setAll(root);
+
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void ReservationsClicked(MouseEvent event) {
+             try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ReservationPage.fxml"));
+            Parent root = loader.load();
+            Container.getChildren().setAll(root);
+
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void ProductClicked(MouseEvent event) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ProductPage.fxml"));
+            Parent root = loader.load();
+            Container.getChildren().setAll(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ex.getMessage());
+        }
+
+
+    }
+
+    @FXML
+    private void WorkshopsCilcked(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/WorkshopPage.fxml"));
+            Parent root = loader.load();
+            Container.getChildren().setAll(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ex.getMessage());
+        }
+    }
+
+    @FXML
+    private void TrainerClicked(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/TrainerPage.fxml"));
+            Parent root = loader.load();
+            Container.getChildren().setAll(root);
+        } catch (IOException ex) {
+            Logger.getLogger(ex.getMessage());
+        }
     }
 
     

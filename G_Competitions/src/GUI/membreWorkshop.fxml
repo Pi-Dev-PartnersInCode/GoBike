@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MemberWorkshopController">
+   <children>
+      <Pane fx:id="rootpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="1211.0" style="-fx-background-color: #fdf9f3;">
+         <children>
+            <Label alignment="CENTER" layoutX="65.0" layoutY="168.0" prefHeight="23.0" prefWidth="201.0" text="Members List" textAlignment="CENTER" textFill="#bf8658" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblData" layoutX="346.0" layoutY="78.0" prefHeight="385.0" prefWidth="836.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -45,10 +45,9 @@ public class CompetitionsPageFrontController implements Initializable {
         CompetitionCRUD srv = new CompetitionCRUD();
         
         nodeCompetitionController.i = 0;
-        ArrayList<Competition> annonces = srv.afficherCompetition();
-        obs = FXCollections.observableArrayList(annonces);
-        //obslsorted = FXCollections.observableArrayList((ArrayList) annonceService.trierParDate())
-        //prixdesc = FXCollections.observableArrayList((ArrayList) annonceService.trierParPrixDESC());
+        ArrayList<Competition> comps = srv.afficherCompetition();
+        obs = FXCollections.observableArrayList(comps);
+        //obslsorted = FXCollections.observableArrayList((ArrayList) competitionsCRUD.trierParDate());
         Node[] nodes = new Node[obs.size()];
         for (int i = 0; i < nodes.length; i++) {
             

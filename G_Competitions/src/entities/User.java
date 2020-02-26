@@ -1,115 +1,146 @@
+package entities;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entities;
 
-import java.sql.Date;
+import java.util.Objects;
+import javafx.collections.ObservableList;
 
-/**
- *
- * @author mneri
- */
 public class User {
-    private int idUser;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String password;
-    private String address;
-    private Date DateOfBirth;
-    private long numtel;
 
-    public User(int idUser, String firstName, String lastName, String email, String password, String address, Date DateOfBirth, long numtel) {
-        this.idUser = idUser;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.address = address;
-        this.DateOfBirth = DateOfBirth;
-        this.numtel = numtel;
-    }
+    private int id;
+    private String nom;
+    private String prenom;
+    private String mdp;
+    private String sexe;
+    private String mail;
+    private String tel;
+    private String role;
+
     public User() {
-        this.idUser = 0;
-        this.firstName = " ";
-        this.lastName = " ";
-        this.email = " ";
-        this.password = " ";
-        this.address = " ";
-        this.DateOfBirth = null;
-        this.numtel = 0;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public User(String nom, String prenom, String mdp, String sexe, String mail, String tel, String role) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mdp = mdp;
+        this.sexe = sexe;
+        this.mail = mail;
+        this.tel = tel;
+        this.role = role;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public User(int id, String nom, String prenom, String mdp, String sexe, String mail, String tel, String role) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mdp = mdp;
+        this.sexe = sexe;
+        this.mail = mail;
+        this.tel = tel;
+        this.role = role;
     }
 
-    public String getFirstName() {
-        return firstName;
+   
+
+   
+
+    public User(String nom, String prenom, String mdp, String sexe, String mail, String tel) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mdp = mdp;
+        this.sexe = sexe;
+        this.mail = mail;
+        this.tel = tel;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    
+
+    public int getId() {
+        return id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getNom() {
+        return nom;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public String getEmail() {
-        return email;
+    public String getMdp() {
+        return mdp;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getSexe() {
+        return sexe;
     }
 
-    public String getPassword() {
-        return password;
+    public String getMail() {
+        return mail;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getTel() {
+        return tel;
     }
 
-    public String getAddress() {
-        return address;
+    
+
+    public String getRole() {
+        return role;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public Date getDateOfBirth() {
-        return DateOfBirth;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public void setDateOfBirth(Date DateOfBirth) {
-        this.DateOfBirth = DateOfBirth;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public long getNumtel() {
-        return numtel;
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
     }
 
-    public void setNumtel(long numtel) {
-        this.numtel = numtel;
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", mdp=" + mdp + ", sexe=" + sexe + ", mail=" + mail + ", tel=" + tel + ", role=" + role + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + this.idUser;
+        hash = 11 * hash + this.id;
+        hash = 11 * hash + Objects.hashCode(this.nom);
+        hash = 11 * hash + Objects.hashCode(this.prenom);
+        hash = 11 * hash + Objects.hashCode(this.mdp);
+        hash = 11 * hash + Objects.hashCode(this.sexe);
+        hash = 11 * hash + Objects.hashCode(this.mail);
+        hash = 11 * hash + Objects.hashCode(this.tel);
+        hash = 11 * hash + Objects.hashCode(this.role);
         return hash;
     }
 
@@ -125,16 +156,35 @@ public class User {
             return false;
         }
         final User other = (User) obj;
-        if (this.idUser != other.idUser) {
+        if (this.id != other.id) {
+            return false;
+        }
+        if (!Objects.equals(this.nom, other.nom)) {
+            return false;
+        }
+        if (!Objects.equals(this.prenom, other.prenom)) {
+            return false;
+        }
+        if (!Objects.equals(this.mdp, other.mdp)) {
+            return false;
+        }
+        if (!Objects.equals(this.sexe, other.sexe)) {
+            return false;
+        }
+        if (!Objects.equals(this.mail, other.mail)) {
+            return false;
+        }
+        if (!Objects.equals(this.tel, other.tel)) {
+            return false;
+        }
+        if (!Objects.equals(this.role, other.role)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "idUser=" + idUser + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", address=" + address + ", DateOfBirth=" + DateOfBirth + ", numtel=" + numtel + '}';
-    }
 
     
+
+   
 }

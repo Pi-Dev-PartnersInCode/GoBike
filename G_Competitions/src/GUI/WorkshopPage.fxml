@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1060.0" stylesheets="@../Styles/Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.WorkshopPageController">
+   <children>
+      <GridPane prefHeight="800.0" prefWidth="1060.0" styleClass="split-pane-divider" stylesheets="@../Styles/Style.css">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="886.0" minWidth="10.0" prefWidth="190.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1003.0" minWidth="10.0" prefWidth="870.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="392.0" minHeight="10.0" prefHeight="142.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="757.0" minHeight="10.0" prefHeight="658.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="tableWorkshop" onMouseClicked="#WorkshopSelected" prefHeight="618.0" prefWidth="1008.0" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columns>
+                <TableColumn fx:id="idWork_col" prefWidth="36.0" text="ID" />
+                <TableColumn fx:id="nameWork_col" prefWidth="133.59998321533203" text="Name" />
+                  <TableColumn fx:id="addressWork_col" minWidth="0.0" prefWidth="216.79998779296875" text="Address" />
+                  <TableColumn fx:id="dateWork_col" minWidth="0.0" prefWidth="121.5999755859375" text="Date " />
+                  <TableColumn fx:id="durationWork_col" prefWidth="102.39999389648438" text="Duration" />
+                  <TableColumn fx:id="idTrainer_col" prefWidth="220.0" text="ID Trainer" />
+              </columns>
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </TableView>
+            <AnchorPane prefHeight="142.0" prefWidth="1115.0" GridPane.columnIndex="1">
+               <children>
+                  <HBox layoutX="41.0" layoutY="14.0" prefHeight="39.0" prefWidth="352.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="174.0" text="Workshop ID" />
+                        <TextField fx:id="idWork" editable="false" promptText="id" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="41.0" layoutY="52.0" prefHeight="39.0" prefWidth="352.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="163.0" text="Workshop Name" />
+                        <TextField fx:id="nameWork" prefHeight="31.0" prefWidth="176.0" promptText="Workshop Name" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="41.0" layoutY="91.0" prefHeight="39.0" prefWidth="352.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="162.0" text="Workshop Address" />
+                        <TextField fx:id="addressWork" prefHeight="31.0" prefWidth="176.0" promptText="Address" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="415.0" layoutY="52.0" prefHeight="69.0" prefWidth="352.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="82.0" text="Trainer ID" />
+                        <TextField fx:id="idTrai" prefHeight="36.0" prefWidth="205.0" promptText="Trainer id" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css">
+                           <HBox.margin>
+                              <Insets left="90.0" />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="415.0" layoutY="14.0" prefHeight="39.0" prefWidth="352.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="162.0" text="Workshop Date" />
+                        <DatePicker fx:id="dateWork" prefHeight="25.0" prefWidth="214.0" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="415.0" layoutY="92.0" prefHeight="36.0" prefWidth="352.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="201.0" text="Workshop duration" />
+                        <TextField fx:id="durationWork" prefHeight="31.0" prefWidth="203.0" promptText="Duration" styleClass="ColoredBorderWithRadius" stylesheets="@../Styles/Style.css">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <Label prefHeight="124.0" prefWidth="190.0" text="Workshop&#10; Management">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addClicked" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" styleClass="button">
+                           <image>
+                              <Image url="@../images/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editClicked" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="61.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteClicked" prefHeight="60.0" prefWidth="60.0" styleClass="CRUDbutton">
+                     <VBox.margin>
+                        <Insets bottom="60.0" left="60.0" right="60.0" top="60.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/remove.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

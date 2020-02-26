@@ -16,16 +16,9 @@ public class Participation {
     private int rang;
     private int record;
 
-    public Participation(int idParticipation, User myUser, Competition myCompetition, int rang, int record) {
-        this.idParticipation = idParticipation;
-        this.myUser = myUser;
-        this.myCompetition = myCompetition;
-        this.rang = rang;
-        this.record = record;
-    }
     public Participation(int idParticipation, int myUser, int myCompetition, int rang, int record) {
         this.idParticipation = idParticipation;
-        this.myUser.setIdUser(myUser);
+        this.myUser.setId(myUser);
         this.myCompetition.setIdCompetition(myCompetition);
         this.rang = rang;
         this.record = record;
