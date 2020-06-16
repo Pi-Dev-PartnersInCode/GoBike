@@ -1,0 +1,45 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+<br>
+    <br>
+    <br>
+    <br>
+    <h1 align="center">My Favorite</h1>
+    <section class="section">
+        <div class="container">
+
+            <!-- course list -->
+            <div class="row justify-content-center">
+                <!-- course item -->
+                {% for a in favoris %}
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <div class="card p-0 border-primary rounded-0 hover-shadow">
+
+                        <div class="card-body">
+                            <ul class="list-inline mb-2">
+                                <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{ a.idEvent.dateevent|date("m-d-Y")}}</li>
+                                <li class="list-inline-item"><i class="ti-location-pin mr-1 text-color"></i>{{a.idEvent.lieu}}</li>
+                            </ul>
+                            <a href="course-single.html">
+                                <h4 class="card-title">{{ a.idEvent.nom}}</h4>
+                            </a>
+                            <p class="card-text mb-4">{{ a.idEvent.description}}</p>
+                            <a href="{{ path('participation_Ajout',{'id':a.idEvent.id}) }}" class="btn btn-primary btn-sm">Participer</a>
+                            <a href="{{ path('favoris_Supprimefront',{'id':a.id}) }}" class="btn btn-primary btn-sm">Supprimer</a>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+                <!-- course item -->
+
+            </div>
+            <!-- /course list -->
+
+            <!-- /course list -->
+        </div>
+    </section>
+{% endblock %}

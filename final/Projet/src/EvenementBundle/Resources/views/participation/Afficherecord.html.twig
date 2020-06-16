@@ -1,0 +1,36 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- teacher category list -->
+                    <ul class="list-inline text-center filter-controls mb-5">
+                        <li class="list-inline-item m-3 text-uppercase" data-filter="BMX">bmx</li>
+                        <li class="list-inline-item m-3 text-uppercase" data-filter="VTT">vtt</li>
+                        <li class="list-inline-item m-3 text-uppercase" data-filter="CYCLO_CROSS">cyclo-cross</li>
+                        <li class="list-inline-item m-3 text-uppercase" data-filter="Route">route</li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- teacher list -->
+            <div class="row filtr-container">
+                <br>
+                <br>
+                <!-- teacher -->
+                {% for a in participation %}
+                <div data-category="{{a.idEvent.type}}" class="col-lg-4 col-sm-6 mb-5 filtr-item">
+                    <div class="card border-0 rounded-0 hover-shadow">
+                        <div class="card-body">
+                            <label>Nom</label><h3 class="card-title">{{a.idMembre.username}}</h3>
+                            <label>record</label><h5>{{a.record}}</h5>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
