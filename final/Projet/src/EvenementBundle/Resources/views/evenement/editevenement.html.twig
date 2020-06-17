@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="wrapper site-min-height">
+        <h3><i class="fa fa-angle-right"></i> Modifier Evenement</h3>
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="row mt">
+                    <div class="form-panel">
+                        <div class="form">
+                            {{form_start (form)}}
+                            <div class="form-group ">
+
+                                <label for="nom" class="control-label col-lg-2">nom:</label>
+                                {{form_widget (form.nom, {'attr': {'class': 'form-control'}})}}<br>
+
+                            </div>
+                            <div class="form-group ">
+
+                                <label for="lieu" class="control-label col-lg-2">lieu:</label>
+                                {{form_widget (form.lieu, {'attr': {'class': 'form-control'}})}}<br>
+
+                            </div>
+                            <div class="form-group ">
+                                <label for="description" class="control-label col-lg-2">Description:</label>
+
+                                {{form_widget (form.description, {'attr': {'class': 'form-control'}})}} <br>
+                            </div>
+                            <div class="form-group ">
+                                <label for="dateevent" class="control-label col-lg-2">Dateevent:</label>
+
+                                {{form_widget (form.dateevent, {'attr': {'class': 'form-control'}})}}<br>
+                            </div>
+                            <div class="form-group ">
+                                <label for="type" class="control-label col-lg-2">type:</label>
+
+                                {{form_widget (form.type, {'attr': {'class': 'form-control'}})}}<br>
+                            </div>
+                            <div class="form-group">
+
+                                <input type="submit" value="Envoyer" class="btn btn-success"/>
+                            </div>
+
+                            {{form_end (form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+
+    <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="lib/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="lib/jquery.ui.touch-punch.min.js"></script>
+    <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <!--common script for all pages-->
+    <!--script for this page-->
+
+{% endblock %}

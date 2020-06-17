@@ -1,0 +1,91 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 align="center">Nos Evenements</h1>
+
+    <section class="section">
+        <div class="container">
+            <div class="col-12">
+                <form method="POST" action="{{ path('evenement_Front_Affiche') }}" name="f" class="row">
+
+                    <div class="col-sm-3" align="center">
+                        <select name="type" id="type" class="form-control" placeholder="nom">
+
+                            <option>BMX</option>
+                            <option>Cyclo-Cross</option>
+                            <option>Route</option>
+                            <option>VTT</option>
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3" align="center">
+                        <select name="lieu" id="lieu" class="form-control" placeholder="lieu">
+
+                            <option>Ariana</option>
+                            <option>Beja</option>
+                            <option>Ben Arous</option>
+                            <option>Bizerte</option>
+                            <option>Gafsa</option>
+                            <option>Jendouba</option>
+                            <option>Kebili</option>
+                            <option>Kef</option>
+                            <option>Mahdia</option>
+                            <option>Manouba</option>
+                            <option>Monastir</option>
+                            <option>Nabeul</option>
+                            <option>Sfax</option>
+                            <option>Sousse</option>
+                            <option>Tataouine</option>
+                            <option>Tozeur</option>
+                            <option>Tunis</option>
+                            <option>Zaghouan</option>
+                            <option></option>
+                        </select>
+                    </div>
+
+                    <div class="col-3">
+                        <button type="submit" name="rechercher" value="Rechercher" class="btn btn-primary">Rechercher</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!-- course list -->
+            <div class="row justify-content-center">
+                <!-- course item -->
+                {% for a in evenement %}
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <div class="card p-0 border-primary rounded-0 hover-shadow">
+
+                        <div class="card-body">
+                            <ul class="list-inline mb-2">
+                                <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{ a.dateevent|date("m-d-Y")}}</li>
+                                <li class="list-inline-item"><i class="ti-location-pin mr-1 text-color"></i>{{a.lieu}}</li>
+                                <a href="{{ path('favoris_Ajout',{'id':a.id}) }}"><i class="ti-star mr-1 text-color"></i></a>
+                            </ul>
+                            <a href="#">
+                                <h4 class="card-title">{{ a.nom}}</h4>
+                            </a>
+                            <p class="card-text mb-4">{{ a.description}}</p>
+
+                            <a href="{{ path('participation_Ajout',{'id':a.id}) }}" class="btn btn-primary btn-sm">Participer</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+                <!-- course item -->
+
+            </div>
+            <!-- /course list -->
+
+            <!-- /course list -->
+        </div>
+    </section>
+{% endblock %}
